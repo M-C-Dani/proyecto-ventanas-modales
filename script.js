@@ -28,4 +28,9 @@ btnCloseModal.addEventListener('click', closeModal);
 // Asociamos un listener a la superposición para cerrar el modal cuando se hace clic fuera del mismo
 overlay.addEventListener('click', closeModal);
 
-
+// Asociamos un listener al evento keydown del documento para cerrar el modal cuando se presiona la tecla Escape
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+    }
+});
